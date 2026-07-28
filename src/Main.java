@@ -40,7 +40,7 @@ public class Main {
                         System.out.println("Enter Friend Name:");
                         String friendName = input.nextLine();
                         if (friendName.isEmpty()) {
-                            System.out.println("ReEnter");
+                            System.out.println("Re-Enter");
                         }else {
                             friend.add(friendName);
                             System.out.println(friendName + " Added.");
