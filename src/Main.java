@@ -4,14 +4,15 @@ public class Main {
         int TotalFriend=3;
         String PayerName="Kishore";
         double SingleShare=TotalAmt/TotalFriend;
+        String ExpenseLine= PayerName +" paid:"+TotalAmt;
+        String EachShare="Each person need to pay:"+SingleShare;
         System.out.println("====SplitWise====");
         System.out.println("Welcome to SplitWise");
         System.out.println("Track shares with Friends");
         System.out.println();
         System.out.println("Ready.");
-        System.out.println(PayerName);
-        System.out.println(TotalAmt);
-        System.out.println(TotalFriend);
-        System.out.println(SingleShare);
+        System.out.println("Total in Person:"+TotalFriend);
+        System.out.println(ExpenseLine);
+        System.out.println(EachShare);
     }
 }
