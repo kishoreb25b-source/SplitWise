@@ -1,16 +1,23 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        double TotalAmt = 500.0;
+        Scanner input =new Scanner(System.in);
+        System.out.println("Enter Amount");
+        double TotalAmt = input.nextDouble();
+        input.nextLine();
+        System.out.println("Enter Payer Name");
+        String PayerName =input.nextLine();
         int TotalFriend = 3;
-        String PayerName = "Kishore";
         double SingleShare = TotalAmt / TotalFriend;
-        String ExpenseLine = PayerName + " paid:" + TotalAmt;
-        String EachShare = "Each person need to pay:" + SingleShare;
+        String ExpenseLine = "%s Paid %.2f".formatted(PayerName,TotalAmt);
+        String EachShare = "%s Each person need to pay:"+ "%.2f".formatted(SingleShare);
         System.out.println("====SplitWise====");
         System.out.println("Welcome to SplitWise");
         System.out.println("Track shares with Friends");
         System.out.println();
         System.out.println("Ready.");
+        System.out.println("Who Paid ?"+PayerName);
         System.out.println("Total in Person:" + TotalFriend);
         System.out.println(ExpenseLine);
         System.out.println(EachShare);
