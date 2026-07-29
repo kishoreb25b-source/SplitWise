@@ -4,17 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        ArrayList<String> friend=new ArrayList<>();
+        ArrayList<Friend> friend=new ArrayList<>();
         AddFriend addFriend=new AddFriend();
         System.out.println("Enter Amount");
         double TotalAmt = input.nextDouble();
         input.nextLine();
         System.out.println("Enter Payer Name");
         String PayerName = input.nextLine();
-        int TotalFriend = friend.size();
-        double SingleShare = TotalAmt / TotalFriend;
-        String ExpenseLine = "%s Paid: %.2f".formatted(PayerName, TotalAmt);
-        String EachShare = "Each person need to pay:" + "%.2f".formatted(SingleShare);
         System.out.println("====SplitWise====");
         System.out.println("Welcome to SplitWise");
         System.out.println("Track shares with Friends");
@@ -29,21 +25,27 @@ public class Main {
             System.out.println("Ent Choice");
             int ch = input.nextInt();
             switch (ch) {
-                case 1->{
-                    System.out.println("Who Paid? => " + PayerName);
-                    System.out.println("Total in Person:" + TotalFriend);
-                    System.out.println(ExpenseLine);
-                    System.out.println(EachShare);
+                case 1-> {
+                    int TotalFriend= friend.size();
+                    if (TotalFriend == 0) {
+                        System.out.println("No friends added.");
+                    } else {
+                        double SingleShare = TotalAmt / TotalFriend;
+                        System.out.println("Who Paid? => " + PayerName);
+                        System.out.println("Total Persons: " + TotalFriend);
+                        System.out.println("%s Paid: %.2f".formatted(PayerName, TotalAmt));
+                        System.out.println("Each person needs to pay: " + "%.2f".formatted(SingleShare));
+                    }
                 }
                 case 2->{
-                    addFriend.AddFriend(input,friend);
+                    addFriend.addFriend(input,friend);
                 }case 3->{
                     if (friend.isEmpty()){
                         System.out.println("Add Friends First");
                     }else {
                         System.out.println("Friends:");
                         for (int i = 0; i < friend.size(); i++) {
-                            System.out.println(" -"+friend.get(i));
+                            System.out.println(" -"+friend.get(i).getName());
                         }
                     }
                 }
