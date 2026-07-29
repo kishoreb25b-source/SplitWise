@@ -6,17 +6,16 @@ public class Main {
         Scanner input = new Scanner(System.in);
         ArrayList<Friend> friend=new ArrayList<>();
         AddFriend addFriend=new AddFriend();
-        System.out.println("Enter Amount");
-        double TotalAmt = input.nextDouble();
-        input.nextLine();
         System.out.println("Enter Payer Name");
         String PayerName = input.nextLine();
+        System.out.println("Enter Amount(₹)");
+        double TotalAmt = input.nextDouble();
         Expense expense=new Expense(PayerName,TotalAmt);
         System.out.println("====SplitWise====");
         System.out.println("Welcome to SplitWise");
         System.out.println("Track shares with Friends");
         System.out.println();
-        System.out.println("Ready.");
+       System.out.println("Ready.");
         l1:while (true) {
             System.out.println("===Menu===");
             System.out.println("1.Show Expense");
@@ -34,7 +33,8 @@ public class Main {
                         double SingleShare = expense.getAmount()/ TotalFriend;
                         System.out.println("Who Paid? => " + expense.getPayerName());
                         System.out.println("Total Persons: " + TotalFriend);
-                        System.out.println("%s Paid: %.2f".formatted(expense.getPayerName(),expense.getAmount()));
+                        System.out.println("Total Amount(₹):"+expense.getAmount());
+                        System.out.println("%s Paid(₹): %.2f".formatted(expense.getPayerName(),expense.getAmount()));
                         System.out.println("Each person needs to pay: " + "%.2f".formatted(SingleShare));
                     }
                 }
