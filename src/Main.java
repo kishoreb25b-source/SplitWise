@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ArrayList<String> friend=new ArrayList<>();
+        AddFriend addFriend=new AddFriend();
         System.out.println("Enter Amount");
         double TotalAmt = input.nextDouble();
         input.nextLine();
@@ -35,25 +36,14 @@ public class Main {
                     System.out.println(EachShare);
                 }
                 case 2->{
-                    while (true) {
-                        input.nextLine();
-                        System.out.println("Enter Friend Name:");
-                        String friendName = input.nextLine();
-                        if (friendName.isEmpty()) {
-                            System.out.println("Re-Enter");
-                        }else {
-                            friend.add(friendName);
-                            System.out.println(friendName + " Added.");
-                            break;
-                        }
-                    }
+                    addFriend.AddFriend(input,friend);
                 }case 3->{
                     if (friend.isEmpty()){
                         System.out.println("Add Friends First");
                     }else {
                         System.out.println("Friends:");
                         for (int i = 0; i < friend.size(); i++) {
-                            System.out.println(friend.get(i));
+                            System.out.println(" -"+friend.get(i));
                         }
                     }
                 }
