@@ -1,5 +1,5 @@
 public class Friend {
-    private final String name;
+    private String name;
     public Friend(String name){
         this.name=name;
     }
