@@ -11,6 +11,7 @@ public class Main {
         input.nextLine();
         System.out.println("Enter Payer Name");
         String PayerName = input.nextLine();
+        Expense expense=new Expense(PayerName,TotalAmt);
         System.out.println("====SplitWise====");
         System.out.println("Welcome to SplitWise");
         System.out.println("Track shares with Friends");
@@ -30,10 +31,10 @@ public class Main {
                     if (TotalFriend == 0) {
                         System.out.println("No friends added.");
                     } else {
-                        double SingleShare = TotalAmt / TotalFriend;
-                        System.out.println("Who Paid? => " + PayerName);
+                        double SingleShare = expense.getAmount()/ TotalFriend;
+                        System.out.println("Who Paid? => " + expense.getPayerName());
                         System.out.println("Total Persons: " + TotalFriend);
-                        System.out.println("%s Paid: %.2f".formatted(PayerName, TotalAmt));
+                        System.out.println("%s Paid: %.2f".formatted(expense.getPayerName(),expense.getAmount()));
                         System.out.println("Each person needs to pay: " + "%.2f".formatted(SingleShare));
                     }
                 }
