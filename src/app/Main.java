@@ -43,15 +43,17 @@ public class Main {
                         System.out.println("Each person needs to pay: " + "%.2f".formatted(SingleShare));
                     }
                 }
-                case 2-> addFriend.addFriend(input,friend);
+                case 2->{
+                    Friend f = addFriend.addFriend(input, friend);
+                    System.out.println(FriendDisplay.addedMessage(f));
+                }
                 case 3->{
                     if (friend.isEmpty()){
                         System.out.println("Add Friends First");
                     }else {
                         System.out.println("Friends:");
                         for (Friend f : friend) {
-                            System.out.println("- %d: %s".formatted(f.getId(), f.getName()));
-
+                            System.out.println(FriendDisplay.listLine(f));
                         }
                     }
                 }
@@ -60,6 +62,15 @@ public class Main {
                     break l1;
                 }default -> System.out.println("Invalid Choice");
             }
+        }
+    }
+    private static class FriendDisplay {
+        static String listLine(Friend friend) {
+            return "- %d: %s".formatted(friend.getId(), friend.getName());
+        }
+
+        static String addedMessage(Friend friend) {
+            return "Added %s (id %d).".formatted(friend.getName(), friend.getId());
         }
     }
 }

@@ -5,7 +5,7 @@ import model.Friend;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class AddFriend {
-    public void addFriend(Scanner input, ArrayList<Friend> friend){
+    public Friend addFriend(Scanner input, ArrayList<Friend> friend){
 
         while (true) {
             input.nextLine();
@@ -16,8 +16,7 @@ public class AddFriend {
                 System.out.println("Re-Enter");
             } else {
                 friend.add(f);
-                System.out.println("Added %s (id %d).".formatted(f.getName(), f.getId()));
-                break;
+                return (f);
             }
         }
     }
