@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"app","l":"AddFriend"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"model","l":"ExpRecord"},{"p":"model","l":"Friend"},{"p":"app","l":"Main"}];updateSearchResults();
