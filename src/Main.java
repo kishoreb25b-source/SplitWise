@@ -45,8 +45,9 @@ public class Main {
                         System.out.println("Add Friends First");
                     }else {
                         System.out.println("Friends:");
-                        for (int i = 0; i < friend.size(); i++) {
-                            System.out.println(" -"+friend.get(i).getName());
+                        for (Friend f : friend) {
+                            System.out.println("- %d: %s".formatted(f.getId(), f.getName()));
+
                         }
                     }
                 }
