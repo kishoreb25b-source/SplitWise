@@ -1,3 +1,8 @@
+package app;
+
+import model.ExpRecord;
+import model.Friend;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -34,13 +39,12 @@ public class Main {
                         System.out.println("Who Paid? => " + expense.payerName());
                         System.out.println("Total Persons: " + TotalFriend);
                         System.out.println("Total Amount(₹):"+expense.amount());
-                        System.out.println("%s Paid(₹): %.2f".formatted(expense.payerName(),expense.amount()));
+                        System.out.println("%s Paid(₹): %.2f".formatted(expense.payerName(), expense.amount()));
                         System.out.println("Each person needs to pay: " + "%.2f".formatted(SingleShare));
                     }
                 }
-                case 2->{
-                    addFriend.addFriend(input,friend);
-                }case 3->{
+                case 2-> addFriend.addFriend(input,friend);
+                case 3->{
                     if (friend.isEmpty()){
                         System.out.println("Add Friends First");
                     }else {

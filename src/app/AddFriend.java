@@ -1,3 +1,7 @@
+package app;
+
+import model.Friend;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 public class AddFriend {
