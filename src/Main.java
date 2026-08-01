@@ -10,7 +10,7 @@ public class Main {
         String PayerName = input.nextLine();
         System.out.println("Enter Amount(₹)");
         double TotalAmt = input.nextDouble();
-        Expense expense=new Expense(PayerName,TotalAmt);
+        ExpRecord expense=new ExpRecord(PayerName,TotalAmt);
         System.out.println("====SplitWise====");
         System.out.println("Welcome to SplitWise");
         System.out.println("Track shares with Friends");
@@ -30,11 +30,11 @@ public class Main {
                     if (TotalFriend == 0) {
                         System.out.println("No friends added.");
                     } else {
-                        double SingleShare = expense.getAmount()/ TotalFriend;
-                        System.out.println("Who Paid? => " + expense.getPayerName());
+                        double SingleShare = expense.amount()/ TotalFriend;
+                        System.out.println("Who Paid? => " + expense.payerName());
                         System.out.println("Total Persons: " + TotalFriend);
-                        System.out.println("Total Amount(₹):"+expense.getAmount());
-                        System.out.println("%s Paid(₹): %.2f".formatted(expense.getPayerName(),expense.getAmount()));
+                        System.out.println("Total Amount(₹):"+expense.amount());
+                        System.out.println("%s Paid(₹): %.2f".formatted(expense.payerName(),expense.amount()));
                         System.out.println("Each person needs to pay: " + "%.2f".formatted(SingleShare));
                     }
                 }
@@ -51,7 +51,7 @@ public class Main {
                     }
                 }
                 case 4-> {
-                    System.out.println("GoodBye");
+                    System.out.println("Thank You,Visit Again");
                     break l1;
                 }default -> System.out.println("Invalid Choice");
             }

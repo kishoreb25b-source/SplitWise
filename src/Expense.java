@@ -1,12 +1,9 @@
 public class Expense {
-    private String payerName;
-    private  Double Amount;
+    private final String payerName;
+    private final  Double Amount;
     Expense(String Payer,Double amount){
         this.payerName=Payer;
         this.Amount=amount;
-    }
-    public Expense(Double amount){
-        this("Unknown",amount);
     }
 
     public String getPayerName() {
