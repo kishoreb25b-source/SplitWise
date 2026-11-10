@@ -1,4 +1,4 @@
-# Splitwise – Java Console Application
+# Splitwise – Project
 
 ## About the Project
 Splitwise is a simple Java console application used to manage and split expenses among friends. It helps calculate individual shares and track who owes money to whom.
